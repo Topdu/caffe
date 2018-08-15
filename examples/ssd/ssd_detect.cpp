@@ -305,8 +305,27 @@ int main(int argc, char** argv) {
           out << static_cast<int>(d[4] * img.rows) << " ";
           out << static_cast<int>(d[5] * img.cols) << " ";
           out << static_cast<int>(d[6] * img.rows) << std::endl;
+		  int posx= static_cast<int>(d[3] * img.cols);
+          int posy= static_cast<int>(d[4] * img.rows);
+          int posw= static_cast<int>(d[5] * img.cols)-posx;
+          int posh= static_cast<int>(d[6] * img.rows)-posy;
+		  cv::Rect pos(posx,posy,posw,posh);
+		  cv::rectangle(img,pos,cv::Scalar(0,static_cast<int>(d[1])/21.0*255,255));
+		 // std::string words=std::string(lablename[static_cast<int>(d[1])]);
+		  ostringstream ostr1;
+		  ostr1 <<score;
+		  cv::putText(img, ostr1.str(), cv::Point(posx, posy), CV_FONT_HERSHEY_COMPLEX, 1, cv::Scalar(0, static_cast<int>(d[1]) / 21.0 * 255, 255));
+		  
         }
       }
+	  cv::namedWindow("textboxs", CV_WINDOW_NORMAL);
+	  cv::imshow("textboxs",img);
+	  cv::waitKey();
+	  std::string save_name=file;
+	  save_name = save_name.substr(0,save_name.find_last_of('.'));
+	  save_name = save_name+"_textboxs_dec.jpg";
+	  std::cout << save_name<<std::endl;
+	  cv::imwrite(save_name,img);
     } else if (file_type == "video") {
       cv::VideoCapture cap(file);
       if (!cap.isOpened()) {
@@ -349,6 +368,7 @@ int main(int argc, char** argv) {
       LOG(FATAL) << "Unknown file_type: " << file_type;
     }
   }
+  
   return 0;
 }
 #else

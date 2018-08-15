@@ -65,6 +65,7 @@
     <ClCompile>
       <DisableSpecificWarnings>4005;4244;%(DisableSpecificWarnings)</DisableSpecificWarnings>
       <AdditionalIncludeDirectories>$(ProjectDir)\..\..\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <TreatWarningAsError>false</TreatWarningAsError>
     </ClCompile>
     <CudaCompile>
       <TargetMachinePlatform>64</TargetMachinePlatform>
@@ -133,7 +134,6 @@
     <ClCompile Include="..\..\src\caffe\test\test_reduction_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\test\test_reshape_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\test\test_rnn_layer.cpp" />
-    <ClCompile Include="..\..\src\caffe\test\test_roi_pooling_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\test\test_scale_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\test\test_sigmoid_cross_entropy_loss_layer.cpp" />
     <ClCompile Include="..\..\src\caffe\test\test_slice_layer.cpp" />

@@ -38,9 +38,8 @@ class SmoothL1LossLayer : public LossLayer<Dtype> {
 
   virtual inline const char* type() const { return "SmoothL1Loss"; }
 
-  virtual inline int ExactNumBottomBlobs() const { return -1; }
   virtual inline int MinBottomBlobs() const { return 2; }
-  virtual inline int MaxBottomBlobs() const { return 4; }
+  virtual inline int MaxBottomBlobs() const { return 3; }
 
   /**
    * Unlike most loss layers, in the SmoothL1LossLayer we can backpropagate
@@ -64,9 +63,7 @@ class SmoothL1LossLayer : public LossLayer<Dtype> {
 
   Blob<Dtype> diff_;
   Blob<Dtype> errors_;
-  Blob<Dtype> ones_;
   bool has_weights_;
-  Dtype sigma2_;
 };
 
 }  // namespace caffe
