@@ -1,3 +1,2 @@
 examples\TextBoxes\image\demo.jpg
 examples\TextBoxes\image\741949714228585387.jpg
-examples\TextBoxes\image\483582762428746732.jpg
