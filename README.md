@@ -1,5 +1,6 @@
-这个TextBoxes分支没有修改原版代码，仅仅只是将代码移植到ssd-windows版本上面，做出来的一个caffe-windows-TextBoxes 仅仅是为了在windows上学习TextBoxes
-首先看一下ssd和TextBoxes原版代码
+这个TextBoxes分支没有修改原版代码，仅仅只是将代码移植到ssd-windows版本上面，做出来的一个caffe-windows-TextBoxes 仅仅是为了在windows上学习TextBoxes。
+该分支的用法以后会commit上来。
+首先看一下ssd和TextBoxes原版代码。
 
 # SSD: Single Shot MultiBox Detector
 
@@ -288,5 +289,4 @@ The reference xml file is as following:
         </annotation>
 
 Please let me know if you encounter any issues.
-
 
